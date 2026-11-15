@@ -15,3 +15,8 @@ Database: Notion "Prospect & Project Tracker", data source `collection://e24b4b5
 - Never set Status = Sent from a draft. Sent requires a Gmail sent message ID.
 - Opted out / Bounced are terminal unless George says otherwise.
 - UK English, GBP, dates as YYYY-MM-DD.
+
+## Notion API quirks (learned 2026-11-15)
+- Create pages with the title key `"title": "FD-00NN"`. Both `ID` and `userDefined:ID` are rejected on create.
+- SQL across two data sources in one query needs a Notion Business plan. Query the tracker and the suppression list separately, or use notion-search.
+- Store `Score` on the /100 scale from FD-0038 onwards. FD-0001–FD-0037 used /10.
