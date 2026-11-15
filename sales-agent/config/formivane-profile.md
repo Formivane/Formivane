@@ -10,6 +10,15 @@ Only facts confirmed by George or seen on formivanedigital.co.uk go here. Outrea
 - Site enquiry form exists; it sends from enquiries@formivanedigital.co.uk and offers a **"Free mock-up request"** (so offering a free homepage mock-up is a real offer)
 - Market: UK. Service: website design, redesign, development, improvements (per brief)
 
+## From formivanedigital.co.uk (read 2026-11-15)
+
+- Tagline: "Websites that make your brand impossible to ignore." Positioning: free tailored homepage mock-up before any commitment.
+- Services: website design, development, landing pages, e-commerce, redesigns, SEO-ready builds; ongoing support options.
+- Pricing: Starter / Business show "From £— (price to be confirmed)"; Custom = quote. **Never mention price in outreach.**
+- Work: four **fictional concept projects**, labelled as such. **Never imply client work.**
+- Testimonials: placeholders. **Never quote them.**
+- Privacy notice: https://formivanedigital.co.uk/privacy (covers outreach: Ltd/LLP only, one follow-up max, opt-out). Note: it names Cloudflare as host, but the site is on Railway, so George should correct that.
+
 ## Unknown — George to supply
 
 - [ ] Legal entity: sole trader or Ltd? (company number if Ltd)
@@ -17,7 +26,7 @@ Only facts confirmed by George or seen on formivanedigital.co.uk go here. Outrea
 - [ ] Pricing to quote, if any (or "never mention price")
 - [ ] Portfolio / live client sites that can be referenced (with permission)
 - [ ] Turnaround times you're comfortable stating (or none)
-- [ ] Privacy policy URL on formivanedigital.co.uk
+- [x] Privacy policy URL: https://formivanedigital.co.uk/privacy
 - [ ] Phone number for signatures (optional)
 - [ ] Anything that genuinely sets Formivane apart
 
