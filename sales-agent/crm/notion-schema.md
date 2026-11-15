@@ -40,9 +40,11 @@ Decision: **reuse the existing Notion "Prospect & Project Tracker"** rather than
 
 Existing extras kept: Mockup, Quality review, Follow-up due, Held, and project-delivery statuses.
 
-## Proposed additions (awaiting approval — additive only, nothing removed)
+## Additions (approved by George and applied 2026-11-15)
 
-`Website` url · `Lead score` number · `Proposed improvement` text · `Research sources` text · `Compliance basis` select [Cleared – corporate subscriber, Blocked – individual subscriber, Unverified, Consent held] · `Date contacted` date · `Last reply` date · `Reply class` select [Interested, Needs more information, Not interested, Unsubscribe, Out of office, Unclear] · `Gmail draft ID` text
+`Website` url · `Proposed improvement` text · `Research sources` text · `Compliance basis` select [Cleared – corporate subscriber, Blocked – individual subscriber, Unverified, Consent held] · `Date contacted` date · `Last reply` date · `Reply class` select [Interested, Needs more information, Not interested, Unsubscribe, Out of office, Unclear] · `Gmail draft ID` text
+
+No separate `Lead score` field: from FD-0037 onwards, `Score` holds the /100 score. FD-0001–FD-0036 are on the old /10 scale.
 
 ## Dedup rule
 
