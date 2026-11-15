@@ -8,7 +8,7 @@ description: Write a personalised first-touch cold email for a qualified Formiva
 Only for leads with score ≥ 70, Compliance basis = Cleared, Suppression checked = yes.
 Claims about Formivane are limited to `sales-agent/config/formivane-profile.md`.
 
-## Shape (80–130 words, plain text)
+## Shape (under 100 words in total, including sign-off and opt-out line; plain text)
 - **Subject**: natural and specific, e.g. "Booking button on the Kirkgate Café site". Not the bare domain. No "Re:", no fake urgency.
 - **Opening**: who George is in one clause, and the specific, verified observation about *their* site.
 - **One improvement** and why it could help their customers (no numbers you can't prove).
