@@ -13,10 +13,12 @@ Authorised account: **formivanedigital@gmail.com** only. Confirm with `list_labe
 3. Record the draft ID in CRM (`Gmail draft ID`), Status → Awaiting George approval.
 
 ## Sending (only with explicit approval)
-- Approval must name the recipient (or FD ID) and refer to the final text. "Send them all" after George has seen each final draft counts; "go ahead and run outreach" does not.
-- If the text changes after approval, re-approve.
+- First-touch batches: George approves one sample draft; that covers the rest of the same batch (rules in `sales-agent/README.md` → Batch approval). Re-run every pre-send check on each draft right before sending; drop any that fail.
+- Follow-ups and replies: approval must name the recipient and refer to the final text.
+- If a draft's text changes after approval, it needs its own approval.
+- "Go ahead and run outreach" with no sample draft approved is not approval.
 - After `send_message`, confirm a sent message ID exists via `search_threads in:sent to:<address>`. Only then set Status → Sent, `Date contacted`, and append to `Email history`.
-- Never call `send_message` in a scheduled/unattended run.
+- Scheduled sends: allowed only for an approved first-touch batch, at the time George set. Never send follow-ups or replies in a scheduled/unattended run.
 
 ## Follow-ups
 At most one, ≥7 days after first send, no reply/opt-out/bounce, drafted as a reply in the same thread, and approved like a first send.
