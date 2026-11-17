@@ -9,7 +9,7 @@ Read `sales-agent/README.md` and `sales-agent/compliance/compliance-policy.md` f
 
 ## Targets (current)
 Sectors: independent restaurants/cafés, barbers/hairdressers, local trades, independent retail, gyms/studios, cleaning firms, small professional services.
-Areas: Leeds, Wakefield, Pontefract, Bradford and nearby. Expand only after George approves.
+Areas: anywhere in the UK (George, 2026-11-17). Expanding to new towns or regions needs no further approval. West Yorkshire remains the home patch.
 
 ## Method
 1. Use WebSearch with sector + town queries, plus "Ltd" / "limited" to bias towards companies (most small businesses in these sectors are sole traders and can't be cold-emailed).
