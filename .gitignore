@@ -1,2 +1,5 @@
 research_notes/
 reports/
+loop/out/
+loop/dashboard.html
+__pycache__/

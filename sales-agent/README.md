@@ -39,6 +39,16 @@ Research-led outreach for Formivane Digital (owner: George Meyer). This folder i
 
 General permission to "operate autonomously" is **not** permission to send.
 
+## Agent graph, loops and self-improvement
+
+The pipeline above now runs as a graph of agents: see `loop/README.md` and `loop/graph.json`.
+
+- **Agents** (`.claude/agents/`): lead-scout → site-auditor → qualifier → email-writer → *George approves + sends* → reply-classifier → reporter → improver.
+- **Loops**: each output must pass hard checks (`loop/rubrics/*.json`) and an independent `critic` (`loop/rubrics/*.md`) before it moves on. 3 attempts maximum.
+- **Graph**: run it with the `run-graph` skill. Dashboard: `python loop/loopkit.py dashboard loop/dashboard.html`.
+- **Self-improvement**: run the `self-improve` skill weekly. It A/B tests one prompt change at a time and only promotes a change with evidence, as a pull request George merges. Until volume builds up, it learns from George's edits to drafts.
+- The approval matrix above is unchanged. Loops research and draft; only George sends. `loop/guardrails.md` lists what the improver can never touch.
+
 ## Hard rules
 
 - Never guess an email address. Only addresses published by the business itself (own website or own verified listing), on the business's own domain.
