@@ -1,0 +1,142 @@
+{
+  "name": "Formivane outreach",
+  "goal": "Find UK Ltd companies with a real website problem, send each one a short email George has approved, and turn replies into mock-up requests on formivanedigital.co.uk.",
+  "headline": [
+    "sent",
+    "replies",
+    "positive_replies",
+    "enquiries_from_outreach",
+    "drafts_approved_unedited"
+  ],
+  "metric_labels": {
+    "sent": "Emails sent (all time)",
+    "replies": "Replies",
+    "positive_replies": "Interested replies",
+    "enquiries_from_outreach": "Site enquiries from outreach",
+    "drafts_approved_unedited": "Drafts approved without edits"
+  },
+  "nodes": [
+    {
+      "id": "discover",
+      "label": "Find leads",
+      "kind": "agent",
+      "agent": "lead-scout",
+      "does": "Finds 10-20 UK Ltd candidates per session (skill: business-discovery)",
+      "next": [
+        "audit"
+      ],
+      "improve": {
+        "metric": "qualified",
+        "type": "binary",
+        "min_n": 30,
+        "window_days": 0
+      }
+    },
+    {
+      "id": "audit",
+      "label": "Audit website",
+      "kind": "agent",
+      "agent": "site-auditor",
+      "does": "Records verified, evidenced website problems (skill: website-audit)",
+      "next": [
+        "qualify"
+      ],
+      "improve": {
+        "metric": "score",
+        "type": "continuous",
+        "min_n": 15,
+        "window_days": 0
+      }
+    },
+    {
+      "id": "qualify",
+      "label": "Qualify + score",
+      "kind": "agent",
+      "agent": "qualifier",
+      "does": "Companies House, contact, suppression, score /100 (skill: lead-qualification)",
+      "next": [
+        "write"
+      ],
+      "improve": {
+        "metric": "score",
+        "type": "continuous",
+        "min_n": 15,
+        "window_days": 0
+      }
+    },
+    {
+      "id": "write",
+      "label": "Write email",
+      "kind": "agent",
+      "agent": "email-writer",
+      "does": "Under-100-word email for score >= 70 + cleared, then a Gmail draft (skills: cold-email-writing, gmail-drafts)",
+      "next": [
+        "approve"
+      ],
+      "improve": {
+        "metric": "approved_unedited",
+        "type": "binary",
+        "min_n": 15,
+        "window_days": 5,
+        "later_metric": "replied",
+        "later_window_days": 14
+      }
+    },
+    {
+      "id": "approve",
+      "label": "George approves + sends",
+      "kind": "human",
+      "does": "Per-recipient approval on the final text. Only George sends.",
+      "next": [
+        "replies",
+        "enquiries"
+      ]
+    },
+    {
+      "id": "replies",
+      "label": "Classify replies",
+      "kind": "measure",
+      "agent": "reply-classifier",
+      "does": "Classifies replies, suppresses opt-outs, records outcomes (skill: reply-classification)",
+      "next": [
+        "report"
+      ]
+    },
+    {
+      "id": "enquiries",
+      "label": "Site enquiries",
+      "kind": "measure",
+      "agent": "reply-classifier",
+      "does": "Matches formivanedigital.co.uk enquiries with source outreach:FD-#### back to the lead",
+      "next": [
+        "report"
+      ]
+    },
+    {
+      "id": "report",
+      "label": "Daily report",
+      "kind": "measure",
+      "agent": "reporter",
+      "does": "Writes the report and headline metrics (skill: outreach-reporting)",
+      "next": [
+        "improve"
+      ]
+    },
+    {
+      "id": "improve",
+      "label": "Self-improve",
+      "kind": "agent",
+      "agent": "improver",
+      "schedule": "weekly",
+      "does": "Decides A/B tests and proposes one prompt change, merged only by George",
+      "loop": [
+        "discover"
+      ]
+    }
+  ],
+  "notes": [
+    "0 replies from 8 delivered emails (10 Nov batch): far too few sends to learn reply rates from yet. Until there are 15 or more per arm, the improver learns from George's edits to drafts.",
+    "Sending stays manual and per recipient (sales-agent/README.md approval matrix). Loops research and draft; they never send.",
+    "Website audits need open network access in the environment that runs them (see the 2026-11-15 setup report)."
+  ]
+}

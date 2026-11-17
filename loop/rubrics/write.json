@@ -1,0 +1,20 @@
+{
+  "about": "Hard gate for cold emails. Input file: first line 'Subject: ...', then the plain-text body. Mirrors .claude/skills/cold-email-writing/SKILL.md.",
+  "checks": [
+    {"type": "max_words", "value": 100, "field": "body", "label": "body under 100 words (incl. sign-off and opt-out)"},
+    {"type": "min_words", "value": 35, "field": "body", "label": "body not a stub"},
+    {"type": "not_regex", "value": "^\\s*([a-z0-9-]+\\.)+(co\\.uk|com|uk|org|net)\\s*$", "field": "subject", "label": "subject is not a bare domain"},
+    {"type": "not_regex", "value": "^\\s*(re|fwd?):", "field": "subject", "label": "no fake Re:/Fwd:"},
+    {"type": "max_words", "value": 9, "field": "subject", "label": "subject 9 words max"},
+    {"type": "must_include", "value": "no thanks", "field": "body", "label": "opt-out line"},
+    {"type": "regex", "value": "formivanedigital\\.co\\.uk/privacy", "field": "body", "label": "privacy link on own domain"},
+    {"type": "must_include", "value": "George Meyer", "field": "body", "label": "signature name"},
+    {"type": "must_not_include", "value": ["hope this finds you well", "quick question", "i've put together", "i have put together", "guarantee", "increase your sales", "more customers guaranteed", "brewpage", "touch base", "circle back", "limited time"], "label": "banned phrases / invented offers"},
+    {"type": "not_regex", "value": "£\\s?\\d|\\d+\\s?(pounds|gbp)", "label": "no prices"},
+    {"type": "not_regex", "value": "\\d+\\s?%", "label": "no unproven percentages"},
+    {"type": "not_regex", "value": "[\\u2600-\\u27BF\\U0001F300-\\U0001FAFF]", "label": "no emojis"},
+    {"type": "max_links", "value": 3, "label": "few links"},
+    {"type": "max_sentence_words", "value": 28, "severity": "should", "label": "short sentences"},
+    {"type": "regex", "value": "formivanedigital\\.co\\.uk/\\?ref=FD-\\d{4}", "severity": "should", "label": "site link carries ?ref=FD-#### for attribution"}
+  ]
+}
